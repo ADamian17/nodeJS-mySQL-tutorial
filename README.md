@@ -1,8 +1,21 @@
 # NodeJS / mySQL
 
-## Requirements
-* [Node.js](https://nodejs.org/en/download/)
-* [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
-* [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+<!-- ## Requirements
+* Basic Knowlege of Experss
+* Basic Knowlege of REST API -->
 
-## 1. Setup mySQL in you Laptop
+## Setup you environment
+#### 1. [Node.js](https://nodejs.org/en/download/)
+If you already have node install in your machine, skip this step. 
+Else go to [https://nodejs.org/en/download/](https://nodejs.org/en/download/) and follow the instructions. 
+
+#### 2. [MySQL](https://www.mysql.com/)
+  ###### Part A
+  Install [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
+  If you already have it install in your machine, skip this step.
+  Else go to [https://dev.mysql.com/downloads/mysql/](https://nodejs.org/en/download/) and follow the instructions.
+  ###### Part B
+  Install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+  If you already have it install in your machine, skip this step.
+  Else go to [https://dev.mysql.com/downloads/mysql/](https://dev.mysql.com/downloads/workbench/) and follow the instructions.
+
