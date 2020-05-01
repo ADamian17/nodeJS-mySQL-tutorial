@@ -55,7 +55,10 @@ const createUsers = (req, res) => {
       }
       res.json({
         status: 200,
-        data: rows,
+        data: {
+          first_name: first_name,
+          last_name: last_name,
+        },
         requestedAt: new Date().toLocaleString(),
       });
     }
@@ -64,33 +67,49 @@ const createUsers = (req, res) => {
 
 // NOTE Update user
 const updateUsers = function (req, res) {
-  const user_id = req.body.user_id;
+  const id = req.params.id;
   const first_name = req.body.first_name;
   const last_name = req.body.last_name;
 
   connection.query(
-    'UPDATE person SET first_name =?, last_name =? WHERE id =?',
-    [first_name, last_name, user_id],
-    function (error, rows, fields) {
+    'UPDATE user_info SET first_name =?, last_name =? WHERE id =?',
+    [first_name, last_name, id],
+    (error, rows, fields) => {
       if (error) {
         console.log(error);
-      } else {
-        response.ok('Successfully changed user!', res);
+        return res.status(500).json({
+          status: 500,
+          error: [{ message: 'Something went wrong! Please try again' }],
+        });
       }
+
+      res.json({
+        status: 200,
+        data: rows,
+        requestedAt: new Date().toLocaleString(),
+      });
     }
   );
 };
 
-// Delete user
-const deleteUsers = function (req, res) {
-  const user_id = req.body.user_id;
-
-  connection.query('DELETE FROM person WHERE id =?', [user_id], function (error, rows, fields) {
+//NOTE Delete User
+const deleteUsers = (req, res) => {
+  const id = req.params.id;
+  connection.query('DELETE FROM user_info WHERE id=?', [id], (error, rows, fields) => {
+    console.log(id);
     if (error) {
       console.log(error);
-    } else {
-      response.ok('Successfully deleted the user! ', res);
+      return res.status(500).json({
+        status: 500,
+        error: [{ message: 'Something went wrong! Please try again' }],
+      });
     }
+
+    res.json({
+      status: 200,
+      data: rows,
+      requestedAt: new Date().toLocaleString(),
+    });
   });
 };
 
