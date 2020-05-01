@@ -4,7 +4,7 @@
 * Basic Knowlege of Experss
 * Basic Knowlege of REST API -->
 
-## Setup you environment
+## Setup your environment
 #### 1. [Node.js](https://nodejs.org/en/download/)
 If you already have node install in your machine, skip this step. 
 Else go to [https://nodejs.org/en/download/](https://nodejs.org/en/download/) and follow the instructions. 
